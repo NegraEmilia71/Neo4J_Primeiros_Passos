@@ -1,0 +1,10 @@
+MERGE (:Genre {name:'Ação'});
+MERGE (:Genre {name:'Drama'});
+MERGE (:Genre {name:'Comédia'});
+MERGE (:Genre {name:'Ficção Científica'});
+MERGE (:Genre {name:'Romance'});
+MERGE (:Genre {name:'Terror'});
+MERGE (:Genre {name:'Fantasia'});
+MERGE (:Genre {name:'Mistério'});
+MERGE (:Genre {name:'Aventura'});
+MERGE (:Genre {name:'Musical'});

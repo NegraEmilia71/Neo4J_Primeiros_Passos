@@ -1,0 +1,10 @@
+MERGE (:Director {name:'Rafael Costa', gender:'Masculino'});
+MERGE (:Director {name:'Henrique Farias', gender:'Masculino'});
+MERGE (:Director {name:'Mário Carvalho', gender:'Masculino'});
+MERGE (:Director {name:'João Meireles', gender:'Masculino'});
+MERGE (:Director {name:'Rogério Lima', gender:'Masculino'});
+MERGE (:Director {name:'Isabel Duarte', gender:'Feminino'});
+MERGE (:Director {name:'Laura Mendes', gender:'Feminino'});
+MERGE (:Director {name:'Patrícia Leal', gender:'Feminino'});
+MERGE (:Director {name:'Camila Prado', gender:'Feminino'});
+MERGE (:Director {name:'Sofia Pires', gender:'Feminino'});

@@ -1,0 +1,10 @@
+MERGE (:User {name:'Carlos Ribeiro', gender:'Masculino'});
+MERGE (:User {name:'Ricardo Mendes', gender:'Masculino'});
+MERGE (:User {name:'João Victor', gender:'Masculino'});
+MERGE (:User {name:'Pedro Azevedo', gender:'Masculino'});
+MERGE (:User {name:'André Torres', gender:'Masculino'});
+MERGE (:User {name:'Juliana Lima', gender:'Feminino'});
+MERGE (:User {name:'Mariana Costa', gender:'Feminino'});
+MERGE (:User {name:'Beatriz Oliveira', gender:'Feminino'});
+MERGE (:User {name:'Fernanda Castro', gender:'Feminino'});
+MERGE (:User {name:'Patrícia Duarte', gender:'Feminino'});
