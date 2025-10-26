@@ -1,0 +1,10 @@
+MERGE (:Movie {name:'Operação Relâmpago'});
+MERGE (:Movie {name:'Força Cega'});
+MERGE (:Movie {name:'Sombras do Passado'});
+MERGE (:Movie {name:'Caminho de Volta'});
+MERGE (:Movie {name:'Rir é o Remédio'});
+MERGE (:Movie {name:'Confusões de Verão'});
+MERGE (:Movie {name:'Horizonte Sintético'});
+MERGE (:Movie {name:'Colônia Lunar'});
+MERGE (:Movie {name:'Amor em Paris'});
+MERGE (:Movie {name:'Cartas do Coração'});

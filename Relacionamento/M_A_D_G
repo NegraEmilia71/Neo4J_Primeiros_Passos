@@ -1,0 +1,56 @@
+// Abaixo estão as relacções entre Filme, Ator, Diretor e Gênero usando o comando MERGE no Neo4j.
+
+// === Ação ===
+MATCH (m:Movie {name:'Operação Relâmpago'}), (a:Actor {name:'Léo Martins'}), (d:Director {name:'Rafael Costa'}), (g:Genre {name:'Ação'})
+MERGE (a)-[:ACTED_IN]->(m)
+MERGE (d)-[:DIRECTED]->(m)
+MERGE (m)-[:IN_GENRE]->(g);
+
+MATCH (m:Movie {name:'Força Cega'}), (a:Actor {name:'Clara Nogueira'}), (d:Director {name:'Isabel Duarte'}), (g:Genre {name:'Ação'})
+MERGE (a)-[:ACTED_IN]->(m)
+MERGE (d)-[:DIRECTED]->(m)
+MERGE (m)-[:IN_GENRE]->(g);
+
+// === Drama ===
+MATCH (m:Movie {name:'Sombras do Passado'}), (a:Actor {name:'Marina Lopes'}), (d:Director {name:'Henrique Farias'}), (g:Genre {name:'Drama'})
+MERGE (a)-[:ACTED_IN]->(m)
+MERGE (d)-[:DIRECTED]->(m)
+MERGE (m)-[:IN_GENRE]->(g);
+
+MATCH (m:Movie {name:'Caminho de Volta'}), (a:Actor {name:'Gabriel Torres'}), (d:Director {name:'Laura Mendes'}), (g:Genre {name:'Drama'})
+MERGE (a)-[:ACTED_IN]->(m)
+MERGE (d)-[:DIRECTED]->(m)
+MERGE (m)-[:IN_GENRE]->(g);
+
+// === Comédia ===
+MATCH (m:Movie {name:'Rir é o Remédio'}), (a:Actor {name:'Paula Andrade'}), (d:Director {name:'Mário Carvalho'}), (g:Genre {name:'Comédia'})
+MERGE (a)-[:ACTED_IN]->(m)
+MERGE (d)-[:DIRECTED]->(m)
+MERGE (m)-[:IN_GENRE]->(g);
+
+MATCH (m:Movie {name:'Confusões de Verão'}), (a:Actor {name:'Thiago Ramos'}), (d:Director {name:'Patrícia Leal'}), (g:Genre {name:'Comédia'})
+MERGE (a)-[:ACTED_IN]->(m)
+MERGE (d)-[:DIRECTED]->(m)
+MERGE (m)-[:IN_GENRE]->(g);
+
+// === Ficção Científica ===
+MATCH (m:Movie {name:'Horizonte Sintético'}), (a:Actor {name:'Lucas Azevedo'}), (d:Director {name:'Camila Prado'}), (g:Genre {name:'Ficção Científica'})
+MERGE (a)-[:ACTED_IN]->(m)
+MERGE (d)-[:DIRECTED]->(m)
+MERGE (m)-[:IN_GENRE]->(g);
+
+MATCH (m:Movie {name:'Colônia Lunar'}), (a:Actor {name:'Fernanda Silva'}), (d:Director {name:'João Meireles'}), (g:Genre {name:'Ficção Científica'})
+MERGE (a)-[:ACTED_IN]->(m)
+MERGE (d)-[:DIRECTED]->(m)
+MERGE (m)-[:IN_GENRE]->(g);
+
+// === Romance ===
+MATCH (m:Movie {name:'Amor em Paris'}), (a:Actor {name:'Beatriz Falcão'}), (d:Director {name:'Rogério Lima'}), (g:Genre {name:'Romance'})
+MERGE (a)-[:ACTED_IN]->(m)
+MERGE (d)-[:DIRECTED]->(m)
+MERGE (m)-[:IN_GENRE]->(g);
+
+MATCH (m:Movie {name:'Cartas do Coração'}), (a:Actor {name:'Diego Navarro'}), (d:Director {name:'Sofia Pires'}), (g:Genre {name:'Romance'})
+MERGE (a)-[:ACTED_IN]->(m)
+MERGE (d)-[:DIRECTED]->(m)
+MERGE (m)-[:IN_GENRE]->(g);

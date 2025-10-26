@@ -1,0 +1,12 @@
+// Abaixo estão as relacções entre Usuário, Filme e Rating usando o comando MERGE no Neo4j.
+
+MATCH (u:User {name:'Carlos Ribeiro'}), (m:Movie {name:'Operação Relâmpago'}) MERGE (u)-[:WATCHED {rating:'Boa'}]->(m);
+MATCH (u:User {name:'Ricardo Mendes'}), (m:Movie {name:'Caminho de Volta'}) MERGE (u)-[:WATCHED {rating:'Boa'}]->(m);
+MATCH (u:User {name:'João Victor'}), (m:Movie {name:'Confusões de Verão'}) MERGE (u)-[:WATCHED {rating:'Ruim'}]->(m);
+MATCH (u:User {name:'Pedro Azevedo'}), (m:Movie {name:'Horizonte Sintético'}) MERGE (u)-[:WATCHED {rating:'Boa'}]->(m);
+MATCH (u:User {name:'André Torres'}), (m:Movie {name:'Cartas do Coração'}) MERGE (u)-[:WATCHED {rating:'Ruim'}]->(m);
+MATCH (u:User {name:'Juliana Lima'}), (m:Movie {name:'Força Cega'}) MERGE (u)-[:WATCHED {rating:'Boa'}]->(m);
+MATCH (u:User {name:'Mariana Costa'}), (m:Movie {name:'Sombras do Passado'}) MERGE (u)-[:WATCHED {rating:'Boa'}]->(m);
+MATCH (u:User {name:'Beatriz Oliveira'}), (m:Movie {name:'Rir é o Remédio'}) MERGE (u)-[:WATCHED {rating:'Boa'}]->(m);
+MATCH (u:User {name:'Fernanda Castro'}), (m:Movie {name:'Colônia Lunar'}) MERGE (u)-[:WATCHED {rating:'Ruim'}]->(m);
+MATCH (u:User {name:'Patrícia Duarte'}), (m:Movie {name:'Amor em Paris'}) MERGE (u)-[:WATCHED {rating:'Boa'}]->(m);
