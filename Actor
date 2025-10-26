@@ -1,10 +1,1 @@
-MERGE (:Actor {name:'Léo Martins', gender:'Masculino'});
-MERGE (:Actor {name:'Thiago Ramos', gender:'Masculino'});
-MERGE (:Actor {name:'Gabriel Torres', gender:'Masculino'});
-MERGE (:Actor {name:'Lucas Azevedo', gender:'Masculino'});
-MERGE (:Actor {name:'Diego Navarro', gender:'Masculino'});
-MERGE (:Actor {name:'Clara Nogueira', gender:'Feminino'});
-MERGE (:Actor {name:'Marina Lopes', gender:'Feminino'});
-MERGE (:Actor {name:'Paula Andrade', gender:'Feminino'});
-MERGE (:Actor {name:'Fernanda Silva', gender:'Feminino'});
-MERGE (:Actor {name:'Beatriz Falcão', gender:'Feminino'});
+
