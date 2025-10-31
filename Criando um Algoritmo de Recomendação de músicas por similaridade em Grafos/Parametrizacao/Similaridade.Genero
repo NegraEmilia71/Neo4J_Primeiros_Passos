@@ -1,0 +1,6 @@
+MATCH (u:Usuario)-[o:OUVIU]->(m:Musica)-[p:PERTENCE_A]->(g:Genero)
+MATCH (outro:Musica)-[:PERTENCE_A]->(g)<-[:PERTENCE_A]-(:Musica)<-[:INTERPRETADA_POR]-(a:Artista)
+WHERE NOT (u)-[:CURTIU]->(:Musica)-[:INTERPRETADA_POR]->(a)
+RETURN DISTINCT a.nome AS Artista_Recomendado, g.nome AS Genero, count(*) AS Relevancia
+ORDER BY Relevancia DESC
+LIMIT 10;

@@ -1,0 +1,7 @@
+CREATE CONSTRAINT
+Artista_unico
+IF NOT EXISTS
+FOR (a:Artista)
+REQUIRE
+u.nome
+IS UNIQUE

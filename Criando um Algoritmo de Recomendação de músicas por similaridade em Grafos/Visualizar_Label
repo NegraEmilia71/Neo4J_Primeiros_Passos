@@ -1,0 +1,2 @@
+MATCH (n)
+RETURN labels(n) AS Tipo, count(*) AS Quantidade;

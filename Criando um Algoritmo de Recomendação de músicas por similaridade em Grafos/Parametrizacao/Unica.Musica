@@ -1,0 +1,7 @@
+CREATE CONSTRAINT
+Musica_unica
+IF NOT EXISTS
+FOR (m:Musica)
+REQUIRE
+m.titulo
+IS UNIQUE

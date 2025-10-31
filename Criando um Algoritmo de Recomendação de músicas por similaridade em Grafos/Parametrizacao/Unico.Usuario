@@ -1,0 +1,7 @@
+CREATE CONSTRAINT
+Usuario_unico
+IF NOT EXISTS
+FOR (u:Usuario)
+REQUIRE
+u.nome
+IS UNIQUE
