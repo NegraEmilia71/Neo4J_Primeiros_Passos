@@ -1,0 +1,1 @@
+A proposta foi o lançamento de um novo produto por uma starup de mídias sociais que ofereça insights sobre o engajamento e as conexões entre os usuários em sua plataforma. Criar um protótipo funcional que responda perguntas complexas em forma de grafo para saber sobre quais são as interações, popularidade e a comunidade de interesse.
