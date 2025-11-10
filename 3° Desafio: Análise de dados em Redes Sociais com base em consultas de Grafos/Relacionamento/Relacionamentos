@@ -1,0 +1,38 @@
+MATCH (a:Pessoa {usuario: 'ana'}), (b:Pessoa {usuario: 'bruno'}) CREATE (a)-[:SEGUE]->(b);
+MATCH (b:Pessoa {usuario: 'bruno'}), (c:Pessoa {usuario: 'carla'}) CREATE (b)-[:SEGUE]->(c);
+MATCH (c:Pessoa {usuario: 'carla'}), (a:Pessoa {usuario: 'ana'}) CREATE (c)-[:SEGUE]->(a);
+MATCH (d:Pessoa {usuario: 'diego'}), (a:Pessoa {usuario: 'ana'}) CREATE (d)-[:SEGUE]->(a);
+
+MATCH (a:Pessoa {usuario: 'ana'}), (p:Publicacao {id: 101}) CREATE (a)-[:PUBLICOU]->(p);
+MATCH (b:Pessoa {usuario: 'bruno'}), (p:Publicacao {id: 102}) CREATE (b)-[:PUBLICOU]->(p);
+MATCH (d:Pessoa {usuario: 'diego'}), (p:Publicacao {id: 103}) CREATE (d)-[:PUBLICOU]->(p);
+
+MATCH (a:Pessoa {usuario: 'ana'}), (p:Publicacao {id: 102}) CREATE (a)-[:CURTIU]->(p);
+MATCH (b:Pessoa {usuario: 'bruno'}), (p:Publicacao {id: 101}) CREATE (b)-[:CURTIU]->(p);
+MATCH (c:Pessoa {usuario: 'carla'}), (p:Publicacao {id: 103}) CREATE (c)-[:CURTIU]->(p);
+MATCH (d:Pessoa {usuario: 'diego'}), (p:Publicacao {id: 101}) CREATE (d)-[:CURTIU]->(p);
+
+MATCH (a:Pessoa {usuario: 'ana'}), (p:Publicacao {id: 103}) CREATE (a)-[:COMENTOU]->(p);
+MATCH (b:Pessoa {usuario: 'bruno'}), (p:Publicacao {id: 101}) CREATE (b)-[:COMENTOU]->(p);
+MATCH (c:Pessoa {usuario: 'carla'}), (p:Publicacao {id: 102}) CREATE (c)-[:COMENTOU]->(p);
+
+MATCH (p:Publicacao {id: 101}), (h:Hashtag {nome: 'viagem'}) CREATE (p)-[:TEM_HASHTAG]->(h);
+MATCH (p:Publicacao {id: 102}), (h:Hashtag {nome: 'fotografia'}) CREATE (p)-[:TEM_HASHTAG]->(h);
+MATCH (p:Publicacao {id: 103}), (h:Hashtag {nome: 'aventura'}) CREATE (p)-[:TEM_HASHTAG]->(h);
+
+MATCH (p:Publicacao {id: 101}), (t:Tema {nome: 'Turismo'}) CREATE (p)-[:SOBRE_TEMA]->(t);
+MATCH (p:Publicacao {id: 102}), (t:Tema {nome: 'Fotografia'}) CREATE (p)-[:SOBRE_TEMA]->(t);
+MATCH (p:Publicacao {id: 103}), (t:Tema {nome: 'Natureza'}) CREATE (p)-[:SOBRE_TEMA]->(t);
+
+MATCH (a:Pessoa {usuario: 'ana'}), (t:Tema {nome: 'Turismo'}) CREATE (a)-[:INTERESSA_SE_EM]->(t);
+MATCH (b:Pessoa {usuario: 'bruno'}), (t:Tema {nome: 'Fotografia'}) CREATE (b)-[:INTERESSA_SE_EM]->(t);
+MATCH (c:Pessoa {usuario: 'carla'}), (t:Tema {nome: 'Natureza'}) CREATE (c)-[:INTERESSA_SE_EM]->(t);
+MATCH (d:Pessoa {usuario: 'diego'}), (t:Tema {nome: 'Fotografia'}) CREATE (d)-[:INTERESSA_SE_EM]->(t);
+
+MATCH (a:Pessoa {usuario: 'ana'}), (av:AvaliacaoApp {id: 201}) CREATE (a)-[:AVALIOU_APP]->(av);
+MATCH (b:Pessoa {usuario: 'bruno'}), (av:AvaliacaoApp {id: 202}) CREATE (b)-[:AVALIOU_APP]->(av);
+MATCH (c:Pessoa {usuario: 'carla'}), (av:AvaliacaoApp {id: 203}) CREATE (c)-[:AVALIOU_APP]->(av);
+
+MATCH (av:AvaliacaoApp {id: 201}), (s:Sentimento {rotulo: 'POSITIVO'}) CREATE (av)-[:TEM_SENTIMENTO]->(s);
+MATCH (av:AvaliacaoApp {id: 202}), (s:Sentimento {rotulo: 'NEUTRO'}) CREATE (av)-[:TEM_SENTIMENTO]->(s);
+MATCH (av:AvaliacaoApp {id: 203}), (s:Sentimento {rotulo: 'NEGATIVO'}) CREATE (av)-[:TEM_SENTIMENTO]->(s);

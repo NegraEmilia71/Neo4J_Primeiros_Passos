@@ -1,0 +1,8 @@
+MATCH (pub:Publicacao)-[:TEM_HASHTAG]->(h:Hashtag)
+OPTIONAL MATCH (p1:Pessoa)-[:CURTIU]->(pub)
+OPTIONAL MATCH (p2:Pessoa)-[:COMENTOU]->(pub)
+WITH h, pub, count(DISTINCT p1) AS curtidas, count(DISTINCT p2) AS comentarios, pub.sentimento AS sentimento
+WITH h.nome AS hashtag, sentimento, sum(curtidas + comentarios) AS totalEngajamento
+RETURN hashtag, sentimento, totalEngajamento
+ORDER BY totalEngajamento DESC
+LIMIT 20;

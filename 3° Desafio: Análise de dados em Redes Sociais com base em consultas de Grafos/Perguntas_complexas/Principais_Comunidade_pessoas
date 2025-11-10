@@ -1,0 +1,13 @@
+MATCH (p:Pessoa)
+WITH p.comunidadeId AS comunidade, p
+ORDER BY comunidade
+WITH comunidade, collect(p)[0..50] AS pessoas
+UNWIND pessoas AS p
+MATCH (p)-[:SEGUE]->(q:Pessoa)
+WHERE q.comunidadeId = comunidade
+WITH comunidade, p, count(q) AS conexoesInternas
+ORDER BY comunidade, conexoesInternas DESC
+WITH comunidade, collect({pessoa: p.usuario, conexoes: conexoesInternas})[0..5] AS maisCentrais
+RETURN comunidade, maisCentrais
+ORDER BY size(maisCentrais) DESC
+LIMIT 5;

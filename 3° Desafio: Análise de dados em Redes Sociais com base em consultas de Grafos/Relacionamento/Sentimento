@@ -1,0 +1,13 @@
+MERGE (pos:Sentimento {rotulo: 'POSITIVO'})
+MERGE (neu:Sentimento {rotulo: 'NEUTRO'})
+MERGE (neg:Sentimento {rotulo: 'NEGATIVO'});
+
+MATCH (a:AvaliacaoApp)
+WITH a,
+     CASE
+       WHEN a.nota >= 4 THEN 'POSITIVO'
+       WHEN a.nota = 3 THEN 'NEUTRO'
+       ELSE 'NEGATIVO'
+     END AS rotulo
+MATCH (s:Sentimento {rotulo: rotulo})
+MERGE (a)-[:TEM_SENTIMENTO]->(s);

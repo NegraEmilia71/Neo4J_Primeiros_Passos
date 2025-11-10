@@ -1,0 +1,7 @@
+MATCH (pub:Publicacao)
+OPTIONAL MATCH (p1:Pessoa)-[:CURTIU]->(pub)
+OPTIONAL MATCH (p2:Pessoa)-[:COMENTOU]->(pub)
+WITH pub,
+     count(DISTINCT p1) AS curtidas,
+     count(DISTINCT p2) AS comentarios
+SET pub.pontuacaoEngajamento = curtidas * 1.0 + comentarios * 2.0;

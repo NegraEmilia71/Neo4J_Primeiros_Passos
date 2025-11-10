@@ -1,13 +1,8 @@
 LOAD CSV WITH HEADERS FROM "https://drive.google.com/u/0/uc?id=1iSRjbqgIdHDyONscERheelZqJ6kjiNHg&export=download" AS row
 CALL {
   WITH row
-  // Cria ou encontra o gênero
   MERGE (g:Genero {nome: '' trim(row.genre)})
-
-  // Cria ou encontra o artista
   MERGE (a:Artista {nome: '' trim(row.artiest)})
-
-  // Cria a música e conecta
   MERGE (m:Musica {titulo:'' trim(row.music)})
   SET m.duracao = toInteger(row.duration),
       m.ano = toInteger(row.year)
