@@ -1,0 +1,28 @@
+CREATE (p1:Pessoa {id: 1, usuario: 'ana', nomeCompleto: 'Ana Souza', criador: true, criadoEm: date('2024-01-10')});
+CREATE (p2:Pessoa {id: 2, usuario: 'bruno', nomeCompleto: 'Bruno Lima', criador: false, criadoEm: date('2024-02-05')});
+CREATE (p3:Pessoa {id: 3, usuario: 'carla', nomeCompleto: 'Carla Mendes', criador: false, criadoEm: date('2024-03-01')});
+CREATE (p4:Pessoa {id: 4, usuario: 'diego', nomeCompleto: 'Diego Torres', criador: true, criadoEm: date('2024-04-12')});
+
+CREATE (pub1:Publicacao {id: 101, criadaEm: date('2024-04-15'), tipo: 'foto', qtdCurtidas: 120, qtdComentarios: 20, qtdCompartilhamentos: 10, qtdSalvamentos: 5, legenda: 'Viagem incrível!'});
+CREATE (pub2:Publicacao {id: 102, criadaEm: date('2024-05-01'), tipo: 'vídeo', qtdCurtidas: 300, qtdComentarios: 45, qtdCompartilhamentos: 25, qtdSalvamentos: 10, legenda: 'Dicas de fotografia'});
+CREATE (pub3:Publicacao {id: 103, criadaEm: date('2024-06-01'), tipo: 'carrossel', qtdCurtidas: 200, qtdComentarios: 40, qtdCompartilhamentos: 15, qtdSalvamentos: 8, legenda: 'Melhores destinos do Brasil'});
+
+CREATE (h1:Hashtag {nome: 'viagem'});
+CREATE (h2:Hashtag {nome: 'fotografia'});
+CREATE (h3:Hashtag {nome: 'aventura'});
+
+CREATE (c1:Comentario {id: 1001, criadoEm: date('2024-04-16'), texto: 'Lugar lindo!'});
+CREATE (c2:Comentario {id: 1002, criadoEm: date('2024-04-17'), texto: 'Quero ir também!'});
+CREATE (c3:Comentario {id: 1003, criadoEm: date('2024-05-02'), texto: 'Adorei as dicas!'});
+
+CREATE (t1:Tema {nome: 'Turismo'});
+CREATE (t2:Tema {nome: 'Fotografia'});
+CREATE (t3:Tema {nome: 'Natureza'});
+
+CREATE (a1:AvaliacaoApp {id: 201, dataAvaliacao: date('2024-06-15'), nota: 5, texto: 'Excelente experiência!'});
+CREATE (a2:AvaliacaoApp {id: 202, dataAvaliacao: date('2024-06-18'), nota: 3, texto: 'Bom, mas pode melhorar'});
+CREATE (a3:AvaliacaoApp {id: 203, dataAvaliacao: date('2024-06-20'), nota: 2, texto: 'Travando muito!'});
+
+CREATE (s1:Sentimento {rotulo: 'POSITIVO'});
+CREATE (s2:Sentimento {rotulo: 'NEUTRO'});
+CREATE (s3:Sentimento {rotulo: 'NEGATIVO'});

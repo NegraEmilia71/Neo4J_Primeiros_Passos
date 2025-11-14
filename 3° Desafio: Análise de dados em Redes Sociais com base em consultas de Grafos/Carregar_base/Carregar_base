@@ -1,0 +1,11 @@
+LOAD CSV WITH HEADERS FROM "https://drive.google.com/u/0/uc?id=1eM9jhVKjubjicCke1fRMpiD4UGrY&export=download" AS row
+CALL { 
+WITH row,
+     toInteger(row.rating) AS nota,
+     date(row.review_date) AS data
+MERGE (a:AvaliacaoApp {id: row.review_id})
+SET  a.texto = row.review_description,
+     a.nota = nota,
+     a.dataAvaliacao = data;
+}
+IN TRANSACTIONS OF 1000 ROWS;

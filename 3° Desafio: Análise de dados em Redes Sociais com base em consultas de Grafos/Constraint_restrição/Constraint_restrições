@@ -1,0 +1,14 @@
+CREATE CONSTRAINT pessoa_pk IF NOT EXISTS
+FOR (p:Pessoa) REQUIRE p.id IS UNIQUE;
+
+CREATE CONSTRAINT publicacao_pk IF NOT EXISTS
+FOR (p:Publicacao) REQUIRE p.id IS UNIQUE;
+
+CREATE CONSTRAINT hashtag_pk IF NOT EXISTS
+FOR (h:Hashtag) REQUIRE h.nome IS UNIQUE;
+
+CREATE CONSTRAINT avaliacao_pk IF NOT EXISTS
+FOR (a:AvaliacaoApp) REQUIRE a.id IS UNIQUE;
+
+CREATE CONSTRAINT sentimento_pk IF NOT EXISTS
+FOR (s:Sentimento) REQUIRE s.rotulo IS UNIQUE;

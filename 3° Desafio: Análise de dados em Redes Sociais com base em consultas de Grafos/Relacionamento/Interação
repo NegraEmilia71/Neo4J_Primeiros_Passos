@@ -1,0 +1,6 @@
+MATCH (p1:Pessoa)-[:CURTIU|COMENTOU]->(pub:Publicacao)<-[:CURTIU|COMENTOU]-(p2:Pessoa)
+WHERE p1 <> p2
+WITH p1, p2, count(DISTINCT pub) AS interacoesComuns
+WHERE interacoesComuns >= 3
+MERGE (p1)-[r:PARECIDO_COM]-(p2)
+SET r.interacoesComuns = interacoesComuns;

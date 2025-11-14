@@ -1,0 +1,6 @@
+MATCH (pub:Publicacao)
+RETURN pub.id AS idPublicacao,
+       pub.legenda AS legenda,
+       pub.pontuacaoEngajamento AS engajamento
+ORDER BY engajamento DESC
+LIMIT 10;

@@ -1,0 +1,18 @@
+MATCH (eu:Pessoa {usuario: $meuUsuario})
+MATCH (eu)-[:PUBLICOU]->(pub:Publicacao)
+MATCH (outra:Pessoa)-[:SEGUE]->(eu)
+OPTIONAL MATCH (outra)-[int:CURTIU|COMENTOU]->(pub)
+WITH eu, outra, count (DISTINCT int) AS interacoesComigo
+WHERE interacoesComigo > 0
+OPTIONAL MATCH (seguidores:Pessoa)-[:SEGUE]->(outra)
+WITH outra, interacoesComigo, count(DISTINCT seguidores) AS qtdSeguidores
+WITH outra,
+     interacoesComigo,
+     qtdSeguidores,
+     interacoesComigo * 2 + qtdSeguidores * 0.1 AS pontuacaoRecomendacao
+RETURN outra.usuario AS pessoa,
+       interacoesComigo,
+       qtdSeguidores,
+       pontuacaoRecomendacao
+ORDER BY pontuacaoRecomendacao DESC
+LIMIT 10;
